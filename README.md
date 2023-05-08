@@ -160,40 +160,25 @@
 ```
 
 ### 메뉴창 하이라이트 유지하기
+### hover 지정 위치를 어디로 할 것인지 결정
 ```
-<script>
-        $(function(){
-            $('.menu_01 ul').mouseover(function(){
-                $('.menu_01 a').addClass('active')
-            })
+.gnb > li:hover > a {
+    color: tomato;
+}
 
-            $('.menu_01 ul').mouseout(function(){
-                $('.menu_01 a').removeClass('active')
-            })
+.gnb > li:hover > a::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: tomato;    
+    border-radius: 100%;
+}
 
-            $('.menu_02 ul').mouseover(function(){
-                $('.menu_02 a').addClass('active')
-            })
-
-            $('.menu_02 ul').mouseout(function(){
-                $('.menu_02 a').removeClass('active')
-            })
-
-            $('.menu_03 ul').mouseover(function(){
-                $('.menu_03 a').addClass('active')
-            })
-
-            $('.menu_03 ul').mouseout(function(){
-                $('.menu_03 a').removeClass('active')
-            })
-
-            $('.menu_04 ul').mouseover(function(){
-                $('.menu_04 a').addClass('active')
-            })
-
-            $('.menu_04 ul').mouseout(function(){
-                $('.menu_04 a').removeClass('active')
-            })
-        })   
-</script>
+.gnb ul li:hover a {
+    background-color: tomato;
+    color: #ffffff;
+}
 ```
