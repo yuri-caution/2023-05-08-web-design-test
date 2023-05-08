@@ -71,3 +71,129 @@
     gap: 10px;
 }
 ```
+
+## modal 팝업창 띄우기
+#### 마크업 및 css 먼저
+```
+<div class="modal">
+        <h2>2021년 2월 무이자 할부 카드 안내</h2>
+        <p>소담스러운 영락과 가장 귀는 얼마나 피고, 이것이다. 길지 끝에 할지라도 청춘의 이것이다. 사라지지 동력은 몸이 만물은 사막이다. 보내는 꽃이 이상의 사랑의 수 말이다. 청춘 동산에는 하는 끓는다. 평화스러운 같은 피부가 오아이스도 위하여 쓸쓸하랴? 천고에 그들의 이상은 가는 원대하고, 부패를 힘있다. 있는 불어 열락의 것은 튼튼하며, 소리다.이것은 그들은 원대하고, 뼈 이것이다. 이상을 심장의 광야에서 일월과 그들은 이상, 것이다. 불어 기관과 오아이스도 운다.</p>
+        <a href="#" class="close">닫기</a>
+</div>
+```
+```
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background-color: #ffffff;
+    border: 1px solid #666;
+    padding: 50px 40px;
+    display: none;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal h2 {
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.modal p {
+    line-height: 2;
+    font-size: 16px;
+}
+
+.modal a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #ccc;
+    position: absolute;
+    top: 420px;
+    right: 40px;
+}
+```
+### JS script 작업
+#### header에 script 추가 잊지 말 것
+```
+<head>
+
+    <script src="./JS/jquery-1.12.4.js"></script>
+    
+</head>
+```
+```
+<script>
+        $(function(){
+            $('.show_modal').click(function(){
+                $('.modal').addClass('active')
+            })
+
+            $('.close').click(function(){
+                $('.modal.active').removeClass('active')
+            })
+        })
+</script>
+```
+
+### 서브 메뉴창 나타내고 없애기
+```
+<script>
+        $(function(){
+            $('.gnb').mouseover(function(){
+                $('.gnb ul').stop().slideDown()
+            })          
+
+            $('.gnb').mouseout(function(){
+                $('.gnb ul').stop().slideUp('')
+            })
+        })
+</script>
+```
+
+### 메뉴창 하이라이트 유지하기
+```
+<script>
+        $(function(){
+            $('.menu_01 ul').mouseover(function(){
+                $('.menu_01 a').addClass('active')
+            })
+
+            $('.menu_01 ul').mouseout(function(){
+                $('.menu_01 a').removeClass('active')
+            })
+
+            $('.menu_02 ul').mouseover(function(){
+                $('.menu_02 a').addClass('active')
+            })
+
+            $('.menu_02 ul').mouseout(function(){
+                $('.menu_02 a').removeClass('active')
+            })
+
+            $('.menu_03 ul').mouseover(function(){
+                $('.menu_03 a').addClass('active')
+            })
+
+            $('.menu_03 ul').mouseout(function(){
+                $('.menu_03 a').removeClass('active')
+            })
+
+            $('.menu_04 ul').mouseover(function(){
+                $('.menu_04 a').addClass('active')
+            })
+
+            $('.menu_04 ul').mouseout(function(){
+                $('.menu_04 a').removeClass('active')
+            })
+        })   
+</script>
+```
