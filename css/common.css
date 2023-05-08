@@ -64,11 +64,11 @@ body {
     position: relative;
 }
 
-.gnb > li > a:hover {
+.gnb > li:hover > a {
     color: tomato;
 }
 
-.gnb > li > a:hover::after {
+.gnb > li:hover > a::after {
     content: '';
     position: absolute;
     top: 30px;
@@ -77,11 +77,6 @@ body {
     height: 15px;
     background-color: tomato;    
     border-radius: 100%;
-}
-
-.gnb > li > a.active {
-    background-color: tomato;
-    color: #ffffff;
 }
 
 .gnb ul {
@@ -102,7 +97,7 @@ body {
     padding: 10px 0;
 }
 
-.gnb ul li a:hover {
+.gnb ul li:hover a {
     background-color: tomato;
     color: #ffffff;
 }
